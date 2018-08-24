@@ -25,6 +25,8 @@ object galvan {
 	method pagarA( empleado ) { dinero -= empleado.sueldo() }
 }
 object enero{
-	
-	
+	var sueldo=1000
+	method sueldo(){
+				return sueldo
+	}
 }
