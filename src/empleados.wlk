@@ -4,29 +4,32 @@ object gimenez {
 //	var property sueldo = 15000
 
 	var sueldo = 15000
+	var sumasueldos=0
+	
 	method sueldo() { return 15000 }
-	method sueldo(nuevoValor) { sueldo = nuevoValor }
+    method sueldo(nuevoValor) { sueldo = nuevoValor.sueldo()}
+    method cambiosueldo(nuevosueldo){sueldo=nuevosueldo }
+    method mostrarsueldo(nuevosueldo){return nuevosueldo}
+    method	cobrarSueldo(){sumasueldos+=sueldo}
+    method totalcobrado(){return sumasueldos}
 }
 
 object baigorria {
 	var cantidadEmpanadasVendidas = 100
 	var montoPorEmpanada = 15
-	
-	method venderEmpanada() {
-		cantidadEmpanadasVendidas += 1
-	}
- 	
+	var sumasueldos=0
+	method venderEmpanada() {cantidadEmpanadasVendidas += 1	}
 	method sueldo() = cantidadEmpanadasVendidas * montoPorEmpanada
+	method cambiomontoempanada(nuevomonto)	{montoPorEmpanada=nuevomonto}
+	method cobrarSueldo(){sumasueldos+=cantidadEmpanadasVendidas*montoPorEmpanada}
 }
 
 object galvan {
 	var dinero = 300000
 	method dinero() { return dinero }
-	method pagarA( empleado ) { dinero -= empleado.sueldo() }
-}
-object enero{
-	var sueldo=1000
-	method sueldo(){
-				return sueldo
+	method pagarA( empleado ) { dinero -= empleado.sueldo()
+		empleado.cobrarSueldo()
 	}
+	
+
 }
