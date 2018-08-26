@@ -17,18 +17,20 @@ object gimenez {
 object baigorria {
 	var cantidadEmpanadasVendidas = 100
 	var montoPorEmpanada = 15
-	var sumasueldos=0
 	var deuda=0
-	var dinero=0
+	var dinerorestante
+	var sueldo
+	
 	method venderEmpanada() {cantidadEmpanadasVendidas += 1	}
-	method sueldo() = cantidadEmpanadasVendidas * montoPorEmpanada
+	method sueldo(){ sueldo= (cantidadEmpanadasVendidas * montoPorEmpanada)
+		self.saldardeuda()	}
 	method cambiomontoempanada(nuevomonto)	{montoPorEmpanada=nuevomonto}
-	method cobrarSueldo(){sumasueldos+=cantidadEmpanadasVendidas*montoPorEmpanada
-		deuda-=cantidadEmpanadasVendidas*montoPorEmpanada
-	}
-	method gastar(cuanto){deuda+=cuanto}
+	method cobrarSueldo(){return sueldo}
+    method saldardeuda(){deuda=0}
+	method gastar(cuanto){deuda+=cuanto
+		dinerorestante= sueldo - deuda}
 	method totalDeuda(){return deuda}
-	method totalDinero(){return dinero}
+	method totalDinero(){return dinerorestante}
 }
 
 object galvan {
