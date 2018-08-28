@@ -15,7 +15,7 @@ object gimenez {
 }
 
 object baigorria {
-	var cantidadEmpanadasVendidas = 100
+	var cantidadEmpanadasVendidas = 1000
 	var montoPorEmpanada = 15
 	var deuda=0
 	var saldo=0
@@ -30,11 +30,13 @@ object baigorria {
 		deuda=0	}
 	method cambiomontoempanada(nuevomonto)	{montoPorEmpanada=nuevomonto}
 	method cobrarSueldo(){saldo+=self.sueldo()}	
-   	method gastar(cuanto){deuda+=cuanto}
+   	method gastar(cuanto){
+   		deuda= 0.min (saldo - cuanto)
+   		saldo = 0.max (saldo -cuanto)
+   	}
 	method totalDeuda(){return deuda}
 	method totalDinero(){return saldo}
 }
-
 object galvan {
 	var dinero = 300000
 	method dinero() { return dinero }
