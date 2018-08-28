@@ -23,18 +23,16 @@ object baigorria {
 	method venderEmpanada() {cantidadEmpanadasVendidas += 1	}
 	method sueldo()=cantidadEmpanadasVendidas * montoPorEmpanada
 	method saldarDeuda(){
-		if(saldo>=deuda){saldo= saldo-deuda
-		deuda=0}
+		if(saldo>=deuda){saldo= saldo-deuda 
+			deuda=0	}
 		else 
-		deuda= saldo - deuda
-		deuda=0
-		}
-	
+		deuda= saldo - deuda  
+		deuda=0	}
 	method cambiomontoempanada(nuevomonto)	{montoPorEmpanada=nuevomonto}
-	method cobrarSueldo(){self.saldarDeuda()}	
+	method cobrarSueldo(){saldo+=self.sueldo()}	
    	method gastar(cuanto){deuda+=cuanto}
 	method totalDeuda(){return deuda}
-	method totalDinero(){return self.sueldo()-deuda}
+	method totalDinero(){return saldo}
 }
 
 object galvan {
