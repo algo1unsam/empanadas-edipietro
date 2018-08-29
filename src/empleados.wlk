@@ -19,7 +19,6 @@ object baigorria {
 	var montoPorEmpanada = 15
 	var deuda=0
 	var saldo=0
-
 	method venderEmpanada() {cantidadEmpanadasVendidas += 1	}
 	method sueldo()=cantidadEmpanadasVendidas * montoPorEmpanada
 	/*method saldarDeuda(){
