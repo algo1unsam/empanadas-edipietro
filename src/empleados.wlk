@@ -6,14 +6,13 @@ object gimenez {
 	var sueldo = 15000
 	var sumasueldos=0
 	
-	method sueldo() { return 15000 }
-    method sueldo(nuevoValor) { sueldo = nuevoValor.sueldo()}
+	method sueldo() { return  15000 }
+    
     method cambiosueldo(nuevosueldo){sueldo=nuevosueldo }
     method mostrarsueldo(nuevosueldo){return nuevosueldo}
     method	cobrarSueldo(){sumasueldos+=sueldo}
     method totalcobrado(){return sumasueldos}
 }
-
 object baigorria {
 	var cantidadEmpanadasVendidas = 1000
 	var montoPorEmpanada = 15
