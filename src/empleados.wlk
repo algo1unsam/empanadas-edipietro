@@ -6,9 +6,13 @@ object gimenez {
 	var sueldo = 15000
 	var sumasueldos=0
 	
+	// (DEBY) acá no debería devolver sueldo? 
 	method sueldo() { return  15000 }
     
     method cambiosueldo(nuevosueldo){sueldo=nuevosueldo }
+    // (DEBY) mostrar?!?!!? jajaajja, mostrar no mostramos nada, nada mas
+    // llamameos a un método que devuelve un valor
+    // perdón por la sutileza pero es importante entender la diferencia
     method mostrarsueldo(nuevosueldo){return nuevosueldo}
     method	cobrarSueldo(){sumasueldos+=sueldo}
     method totalcobrado(){return sumasueldos}
